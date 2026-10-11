@@ -1,1 +1,740 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AGS design concepts</title><style>body{font:18px system-ui;max-width:720px;margin:64px auto;padding:24px;color:#173b36}li{margin:24px 0}a{color:#173b36}</style><h1>AGS design concepts</h1><ol><li><a href="design-1/contemporary-academic/en">Contemporary academic</a> — <a href="design-1/contemporary-academic/ar" lang="ar">العربية</a></li><li><a href="design-2/research-focused/en">Research focused</a> — <a href="design-2/research-focused/ar" lang="ar">العربية</a></li><li><a href="design-3/balanced-institutional/en">Balanced institutional</a> — <a href="design-3/balanced-institutional/ar" lang="ar">العربية</a></li><li><a href="design-4/cinematic-digital-flagship/en">Cinematic digital flagship</a> — <a href="design-4/cinematic-digital-flagship/ar" lang="ar">العربية</a></li></ol></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arab Global Scholars website concepts</title>
+<meta name="description" content="Four website design concepts for Arab Global Scholars: what each one is, how they differ, and links to open each prototype in English and Arabic.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..700&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Manrope:wght@700;800&family=Noto+Kufi+Arabic:wght@500&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --ground:#f2f2ef;
+  --paper:#ffffff;
+  --ink:#1c1c1c;
+  --muted:#5c5955;
+  --rule:#d6d4cf;
+  --maroon:#661414;
+  --frame:"Hanken Grotesk",system-ui,sans-serif;
+  --arabic:"Noto Kufi Arabic",sans-serif;
+  --wrap:1240px;
+  --gutter:clamp(20px,4vw,48px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 1.0625rem/1.6 var(--frame);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid #2a6fb5;outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+[lang="ar"]{font-family:var(--arabic);font-weight:500}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:16px;top:12px;z-index:20;background:var(--paper);padding:8px 14px}
+
+/* Header */
+.site-head{position:sticky;top:0;z-index:10;background:rgba(242,242,239,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--rule)}
+.site-head .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none}
+.brand img{width:132px}
+.brand span{font-weight:600;font-size:.9375rem;padding-left:16px;border-left:1px solid var(--rule)}
+.site-head nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.site-head nav a{font-size:.875rem;font-weight:500;text-decoration:none;padding:6px 10px;border-radius:6px;color:var(--muted)}
+.site-head nav a:hover{color:var(--ink);background:rgba(0,0,0,.05)}
+
+/* Intro */
+.intro{padding-block:clamp(56px,8vw,104px) 48px}
+.intro h1{font-size:clamp(2.5rem,1.4rem + 4.4vw,5rem);line-height:1.02;letter-spacing:-.035em;font-weight:700;margin:0;max-width:14ch}
+.intro .lede{font-size:clamp(1.125rem,1rem + .4vw,1.3125rem);color:var(--muted);max-width:56ch;margin:28px 0 0}
+.doors{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,24px);margin-top:clamp(40px,6vw,72px);padding:0;list-style:none}
+.door{display:flex;flex-direction:column}
+.door .shot{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--rule);background:var(--paper);aspect-ratio:16/10;transition:transform .25s ease,box-shadow .25s ease}
+.door .shot img{width:100%;height:100%;object-fit:cover;object-position:top left}
+.door .shot:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(28,28,28,.55)}
+.door h2{font-size:1.125rem;line-height:1.25;margin:18px 0 4px;letter-spacing:-.01em}
+.door h2 a{text-decoration:none}
+.door h2 b{font-variant-numeric:tabular-nums;color:var(--maroon);margin-right:6px}
+.door p{margin:0;color:var(--muted);font-size:.9375rem;line-height:1.5}
+.langs{display:flex;gap:14px;margin-top:auto;padding-top:12px;font-size:.9375rem;font-weight:600}
+.langs a{text-decoration-thickness:1px;text-underline-offset:4px}
+.langs a:hover{color:var(--maroon)}
+
+/* Frame sections */
+.section{padding-block:clamp(56px,7vw,96px);border-top:1px solid var(--rule)}
+.section h2{font-size:clamp(1.75rem,1.2rem + 1.8vw,2.625rem);line-height:1.1;letter-spacing:-.025em;margin:0;max-width:22ch}
+.section .sub{color:var(--muted);max-width:60ch;margin:16px 0 0}
+.same{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:start}
+.same ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.same li{display:grid;grid-template-columns:11rem 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.same li strong{font-weight:600}
+.same li span{color:var(--muted)}
+
+/* Map + table */
+.differ-top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
+.map{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:12px}
+.map svg{width:100%;height:auto;display:block;font-family:var(--frame)}
+.map figcaption{font-size:.8125rem;color:var(--muted);padding:6px 8px 2px}
+.table-scroll{overflow-x:auto;margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--ink)}
+table{border-collapse:collapse;width:100%;min-width:980px;font-size:.9375rem;line-height:1.5}
+th,td{text-align:left;vertical-align:top;padding:16px 18px 16px 0;border-bottom:1px solid var(--rule)}
+thead th{font-size:1rem;padding-block:18px;border-bottom:1px solid var(--ink)}
+thead th a{text-decoration:none}
+thead th a:hover{text-decoration:underline}
+thead .chip{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:8px;vertical-align:-1px;border:1px solid rgba(0,0,0,.15)}
+tbody th{font-weight:600;width:13%;color:var(--ink)}
+tbody td{width:21.75%;color:#35322f}
+tr.choose td{color:var(--ink);font-weight:500}
+.th-note{display:block;margin-top:6px;font-weight:400;font-size:.8125rem;line-height:1.45;color:var(--muted)}
+.table-note{font-size:.9375rem;color:var(--muted);max-width:72ch;margin:20px 0 0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.875em}
+
+/* Concept chapters */
+.concept{--bg:#fff;--fg:var(--ink);--soft:var(--muted);--line:var(--rule);--accent:var(--maroon);--btn-bg:var(--maroon);--btn-fg:#fff;
+  --display:"Source Sans 3",sans-serif;--display-weight:700;--display-stretch:100%;--display-track:-.02em;
+  background:var(--bg);color:var(--fg);padding-block:clamp(64px,8vw,112px)}
+.concept .head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px}
+.concept .num{font-family:var(--display);font-weight:var(--display-weight);font-stretch:var(--display-stretch);color:var(--accent);font-size:1.125rem;font-variant-numeric:tabular-nums;margin:0 0 10px}
+.concept h2{font-family:var(--display);font-weight:var(--display-weight);font-stretch:var(--display-stretch);letter-spacing:var(--display-track);font-size:clamp(2.25rem,1.3rem + 3.6vw,4.25rem);line-height:1;margin:0}
+.concept .thesis{font-size:clamp(1.125rem,1rem + .45vw,1.375rem);line-height:1.5;max-width:52ch;margin:24px 0 0;color:var(--fg)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:8px;font:600 .9375rem/1 var(--frame);text-decoration:none;border:1px solid transparent;cursor:pointer;background:none;color:inherit}
+.btn.primary{background:var(--btn-bg);color:var(--btn-fg)}
+.btn.ghost{border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--fg)}
+.btn.primary:hover{filter:brightness(1.12)}
+.btn[lang="ar"]{font-family:var(--arabic);font-weight:500}
+.shots{display:grid;grid-template-columns:minmax(0,1fr) clamp(150px,16vw,210px);gap:clamp(16px,2vw,28px);align-items:end;margin-top:clamp(36px,5vw,56px)}
+.shots .desk{border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/10;background:#ddd}
+.shots .desk img{width:100%;height:100%;object-fit:cover;object-position:top}
+.shots .phone{border-radius:24px;overflow:hidden;border:5px solid var(--fg);aspect-ratio:390/844;background:#ddd}
+.shots .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.shot-meta{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;margin-top:14px;font-size:.875rem;color:var(--soft)}
+.linkish{background:none;border:0;padding:0;font:600 .875rem/1.4 var(--frame);color:var(--fg);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;cursor:pointer}
+.linkish:hover{color:var(--accent)}
+.details{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,56px);margin-top:clamp(40px,5vw,64px);padding-top:28px;border-top:1px solid var(--line)}
+.details h3{font-family:var(--display);font-weight:var(--display-weight);font-stretch:var(--display-stretch);font-size:1.125rem;letter-spacing:-.005em;margin:0 0 14px}
+.details ol,.details ul{margin:0;padding:0;list-style:none;font-size:.9375rem;line-height:1.5}
+.details li{padding:7px 0;border-bottom:1px solid var(--line)}
+.details li:last-child{border-bottom:0}
+.details ol{counter-reset:s}
+.details ol li{counter-increment:s;display:grid;grid-template-columns:1.75rem 1fr}
+.details ol li::before{content:counter(s);color:var(--soft);font-variant-numeric:tabular-nums}
+.details ul li{padding-left:0}
+.verdict p{margin:0 0 6px;font-size:.9375rem;line-height:1.55}
+.verdict h3+p{margin-top:0}
+.verdict p+h3{margin-top:26px}
+.specimen{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,4vw,64px);align-items:center;margin-top:clamp(40px,5vw,56px);padding-top:28px;border-top:1px solid var(--line)}
+.type{display:flex;align-items:baseline;gap:22px}
+.type .aa{font-family:var(--display);font-weight:var(--display-weight);font-stretch:var(--display-stretch);font-size:clamp(4rem,3rem + 3vw,6rem);line-height:.9;letter-spacing:var(--display-track)}
+.type .aa-ar{font-family:var(--arabic);font-size:clamp(2.25rem,1.8rem + 1.6vw,3.25rem);line-height:1}
+.type dl{margin:0;font-size:.875rem;line-height:1.55}
+.type dt{color:var(--soft)}
+.type dd{margin:0 0 6px;font-weight:600}
+.swatches{display:flex;flex-wrap:wrap;gap:12px;margin:0;padding:0;list-style:none;justify-content:flex-end}
+.swatches li{width:96px;font-size:.8125rem;line-height:1.35}
+.swatches i{display:block;height:56px;border-radius:8px;border:1px solid var(--line);margin-bottom:8px}
+.swatches b{display:block;font-weight:600}
+.swatches span{color:var(--soft);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.75rem}
+.heroes{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;font-size:.875rem;color:var(--soft)}
+.heroes a{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:999px;color:var(--fg);text-decoration:none;font-weight:600}
+.heroes a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* Concept 1: white editorial */
+#concept-1{--bg:#ffffff;--accent:#661414;--display:"Lucida Grande","Lucida Sans Unicode","Source Sans 3",sans-serif;--display-track:-.025em;border-top:1px solid var(--rule)}
+/* Concept 2: night research tool with pillar colours */
+#concept-2{--bg:#121212;--fg:#f6f5f2;--soft:#a8a49d;--line:#34312e;--accent:#e3a6a0;--btn-bg:#661414;--btn-fg:#fff;
+  --display:"Source Sans 3",sans-serif;
+  background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.2px);background-size:22px 22px}
+#concept-2 .num{font-family:"IBM Plex Mono",monospace;font-weight:500}
+#concept-2 .shots .phone{border-color:#3a3632}
+#concept-2 .swatches i,#concept-4 .swatches i{border-color:#5a5550}
+#concept-2 .details ol li::before{font-family:"IBM Plex Mono",monospace;font-size:.8125rem;padding-top:2px}
+.pillars{display:flex;gap:6px;margin-top:18px}
+.pillars span{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;font:500 .8125rem/1 "IBM Plex Mono",monospace;color:#121212}
+/* Concept 3: warm institutional */
+#concept-3{--bg:#fcfaf6;--accent:#661414;--line:#e6dfd2;--display:"Manrope",sans-serif;--display-weight:800;--display-track:-.035em;border-top:1px solid #e6dfd2}
+#concept-3 .details{background:#fbf3e3;border:1px solid #efe3c9;border-radius:16px;padding:28px;border-top:1px solid #efe3c9}
+/* Concept 4: cinematic night */
+#concept-4{--bg:#1c1c1c;--fg:#fbf3e3;--soft:#b9b0a2;--line:#3b3735;--accent:#e3c28f;--btn-bg:#fbf3e3;--btn-fg:#661414;
+  --display:"Archivo",sans-serif;--display-weight:640;--display-stretch:112%;--display-track:-.03em}
+#concept-4 h2{font-size:clamp(2.5rem,1.2rem + 5vw,5.5rem)}
+#concept-4 .btn.primary{border-radius:999px}
+#concept-4 .btn.ghost{border-radius:999px}
+#concept-4 .shots .phone{border-color:#3b3735}
+
+/* Footer */
+.site-foot{padding-block:56px 72px;font-size:.9375rem;color:var(--muted)}
+.site-foot .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px}
+.site-foot p{margin:0 0 10px;max-width:62ch}
+
+/* Full-page viewer */
+dialog{padding:0;border:0;border-radius:14px;width:min(1100px,94vw);height:min(92vh,1400px);background:var(--paper);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+dialog::backdrop{background:rgba(18,18,18,.72)}
+dialog[open]{display:flex;flex-direction:column}
+.dlg-head{display:flex;align-items:center;gap:16px;padding:12px 12px 12px 20px;border-bottom:1px solid var(--rule)}
+.dlg-head h2{font-size:1rem;margin:0;font-weight:600}
+.dlg-head .btn{margin-left:auto;border:1px solid var(--rule)}
+.dlg-body{overflow:auto;flex:1;background:#e8e7e3}
+.dlg-body img{width:100%}
+
+@media (max-width:1000px){
+  .doors{grid-template-columns:repeat(2,1fr)}
+  .same,.differ-top{grid-template-columns:1fr}
+  .details{grid-template-columns:1fr 1fr}
+  .details .verdict{grid-column:1/-1}
+  .specimen{grid-template-columns:1fr}
+  .swatches{justify-content:flex-start}
+}
+@media (max-width:640px){
+  .site-head nav{display:none}
+  .brand span{display:none}
+  .doors{grid-template-columns:1fr;gap:36px}
+  .same li{grid-template-columns:1fr;gap:2px}
+  .shots{grid-template-columns:1fr}
+  .shots .phone{width:62%;margin-inline:auto}
+  .details{grid-template-columns:1fr}
+  .site-foot .wrap{grid-template-columns:1fr}
+  .swatches li{width:calc(33% - 8px)}
+  table{min-width:860px}
+  tbody th,thead td{position:sticky;left:0;z-index:1;background:var(--ground);width:7.5rem;min-width:7.5rem;padding-right:14px;box-shadow:1px 0 0 var(--rule)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Arab Global Scholars website concepts, home">
+      <img src="assets/ags-horizontal.svg" alt="Arab Global Scholars" width="132" height="29">
+      <span>Website concepts</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#compare">Compare</a>
+      <a href="#concept-1">Concept 1</a>
+      <a href="#concept-2">Concept 2</a>
+      <a href="#concept-3">Concept 3</a>
+      <a href="#concept-4">Concept 4</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="intro wrap" aria-labelledby="intro-title">
+    <h1 id="intro-title">Four ways into Arab Global Scholars</h1>
+    <p class="lede">Four website concepts built on the same brand, content, membership rules and platform. Each one puts a different idea at the front door. Read how they differ, then open any concept in English or Arabic.</p>
+
+    <ul class="doors">
+      <li class="door">
+        <a class="shot" href="design-1/contemporary-academic/en" tabindex="-1" aria-hidden="true"><img src="assets/design-1-hero.webp" alt="" width="1440" height="900"></a>
+        <h2><a href="design-1/contemporary-academic/en"><b>1</b>Contemporary Academic</a></h2>
+        <p>A scholarly publication. Named Fellows and their ideas come first.</p>
+        <div class="langs"><a href="design-1/contemporary-academic/en">English</a><a href="design-1/contemporary-academic/ar" lang="ar">العربية</a><a href="#concept-1">Details</a></div>
+      </li>
+      <li class="door">
+        <a class="shot" href="design-2/research-focused/en" tabindex="-1" aria-hidden="true"><img src="assets/design-2-hero.webp" alt="" width="1440" height="900"></a>
+        <h2><a href="design-2/research-focused/en"><b>2</b>Research-Focused</a></h2>
+        <p>A search engine for Arab expertise. The network is something you explore.</p>
+        <div class="langs"><a href="design-2/research-focused/en">English</a><a href="design-2/research-focused/ar" lang="ar">العربية</a><a href="#concept-2">Details</a></div>
+      </li>
+      <li class="door">
+        <a class="shot" href="design-3/balanced-institutional/en" tabindex="-1" aria-hidden="true"><img src="assets/design-3-hero.webp" alt="" width="1440" height="900"></a>
+        <h2><a href="design-3/balanced-institutional/en"><b>3</b>Balanced Institutional</a></h2>
+        <p>A clear front door. It asks who you are and sends you to the right place.</p>
+        <div class="langs"><a href="design-3/balanced-institutional/en">English</a><a href="design-3/balanced-institutional/ar" lang="ar">العربية</a><a href="#concept-3">Details</a></div>
+      </li>
+      <li class="door">
+        <a class="shot" href="design-4/cinematic-digital-flagship/en" tabindex="-1" aria-hidden="true"><img src="assets/design-4-hero.webp" alt="" width="1440" height="900"></a>
+        <h2><a href="design-4/cinematic-digital-flagship/en"><b>4</b>Cinematic Digital Flagship</a></h2>
+        <p>A flagship brand. Full-screen photography and large type tell the AGS story.</p>
+        <div class="langs"><a href="design-4/cinematic-digital-flagship/en">English</a><a href="design-4/cinematic-digital-flagship/ar" lang="ar">العربية</a><a href="#concept-4">Details</a></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="same-title">
+    <div class="wrap same">
+      <div>
+        <h2 id="same-title">What all four share</h2>
+        <p class="sub">The concepts differ in look, homepage emphasis and navigation, not in what AGS offers. All four follow the same AGS Board Bylaws and the same scope of work. Choosing between them is a choice about what visitors meet first and how they find their way.</p>
+      </div>
+      <ul>
+        <li><strong>Brand and content</strong><span>AGS maroon, the bilingual logo and the Qatar Foundation and HBKU endorsement. The same Fellows, Five Pillars, Focus Areas, projects, calls, events and stories. People and figures are fictional samples.</span></li>
+        <li><strong>Membership</strong><span>Anyone who supports the mission can register as an Affiliate Member: agree to the Code of Conduct, name your expertise, no approval needed. Fellowship has no application. Fellows are nominated in confidence by existing Fellows and elected by a two-thirds Board vote, up to five a year.</span></li>
+        <li><strong>Governance</strong><span>As the bylaws set out: a Board of Fellows, a five-member Steering Committee drawn from the Board, and a Secretariat with a non-voting seat. Ballots, quorum, meeting notice and minutes follow the bylaw rules.</span></li>
+        <li><strong>Platform</strong><span>A Member area; a Fellow portal with governance inside it; a Partner workspace; and a Secretariat super-admin for content, people, broadcasts, support, webinars and reports.</span></li>
+        <li><strong>Privacy and help</strong><span>Consent at sign-up, cookie choices, data export and account deletion. A help centre, support tickets, a demo live chat and feedback tools.</span></li>
+        <li><strong>English and Arabic</strong><span>Every page in both languages, with full right-to-left layouts set in Noto Kufi Arabic.</span></li>
+        <li><strong>Same addresses</strong><span>The same 123 page addresses work in every concept. Swap the concept in a link and you land on the equivalent page.</span></li>
+        <li><strong>Prototype limits</strong><span>No real accounts or backend. Sign-in is simulated, and anything you do is saved only in your browser.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="compare" aria-labelledby="compare-title">
+    <div class="wrap">
+      <div class="differ-top">
+        <div>
+          <h2 id="compare-title">Where they differ</h2>
+          <p class="sub">The biggest difference is what each homepage leads with, and who it serves first. Concepts 1 and 3 explain AGS. Concept 2 helps you find people and research. Concept 4 sells the network as a brand. Joining, the signed-in areas and the rules behind them are the same in all four; only their presentation changes.</p>
+        </div>
+        <figure class="map" style="margin:0">
+          <svg viewBox="0 0 640 400" role="img" aria-labelledby="map-title map-desc">
+            <title id="map-title">How the four concepts compare</title>
+            <desc id="map-desc">Concept 3 is quiet and explains the institution. Concept 1 is moderately image-led and sits in the middle. Concept 2 is the most focused on finding people and research, in a text and data style. Concept 4 is the most immersive and image-led, and leans toward telling the AGS story.</desc>
+            <g stroke="#d6d4cf" stroke-width="1">
+              <line x1="60" y1="200" x2="600" y2="200"/>
+              <line x1="330" y1="30" x2="330" y2="352"/>
+            </g>
+            <g font-size="13" fill="#5c5955">
+              <text x="60" y="380">Explains AGS</text>
+              <text x="600" y="380" text-anchor="end">Finds people and research</text>
+              <text x="342" y="44">Immersive, image-led</text>
+              <text x="342" y="346">Quiet, text-led</text>
+            </g>
+            <g font-size="14" font-weight="600" fill="#1c1c1c">
+              <circle cx="150" cy="290" r="17" fill="#fbf3e3" stroke="#661414" stroke-width="2"/>
+              <text x="150" y="295" text-anchor="middle" fill="#661414">3</text>
+              <text x="176" y="295">Balanced Institutional</text>
+
+              <circle cx="290" cy="170" r="17" fill="#ffffff" stroke="#661414" stroke-width="2"/>
+              <text x="290" y="175" text-anchor="middle" fill="#661414">1</text>
+              <text x="316" y="175">Contemporary Academic</text>
+
+              <circle cx="520" cy="262" r="17" fill="#121212"/>
+              <text x="520" y="267" text-anchor="middle" fill="#f6f5f2">2</text>
+              <text x="494" y="300" text-anchor="end">Research-Focused</text>
+
+              <circle cx="232" cy="74" r="17" fill="#1c1c1c" stroke="#e3c28f" stroke-width="2"/>
+              <text x="232" y="79" text-anchor="middle" fill="#e3c28f">4</text>
+              <text x="258" y="79">Cinematic Digital Flagship</text>
+            </g>
+          </svg>
+          <figcaption>Our reading of each homepage, based on what it shows first.</figcaption>
+        </figure>
+      </div>
+
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Side-by-side comparison of the four concepts">
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+              <th scope="col"><a href="#concept-1"><span class="chip" style="background:#fff"></span>1 Contemporary Academic</a></th>
+              <th scope="col"><a href="#concept-2"><span class="chip" style="background:#121212"></span>2 Research-Focused</a></th>
+              <th scope="col"><a href="#concept-3"><span class="chip" style="background:#fbf3e3"></span>3 Balanced Institutional</a></th>
+              <th scope="col"><a href="#concept-4"><span class="chip" style="background:#1c1c1c;border-color:#e3c28f"></span>4 Cinematic Digital Flagship</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="choose">
+              <th scope="row">Choose it if AGS should be seen first as</th>
+              <td>A serious scholarly institution with named people at its heart</td>
+              <td>The place to find Arab expertise and collaborators</td>
+              <td>An accessible, trustworthy institution for every audience</td>
+              <td>A flagship brand with a global network behind it</td>
+            </tr>
+            <tr>
+              <th scope="row">Homepage opens with</th>
+              <td>Fellow search beside a rotating portrait and quote from a featured Fellow</td>
+              <td>A large search box and key figures beside an interactive network of Fellows, projects and Pillars, on a dark background</td>
+              <td>An “I am…” chooser for four audiences, beside tiles for the Annual Gathering, registered members and the next deadline</td>
+              <td>Full-screen photography that changes every 6 seconds behind a large headline, with four headline options to review</td>
+            </tr>
+            <tr>
+              <th scope="row">Serves first</th>
+              <td>Academics, peers and editors</td>
+              <td>Researchers and partners looking for expertise</td>
+              <td>First-time visitors, media, government and partners</td>
+              <td>Prospective members, the public and funders</td>
+            </tr>
+            <tr>
+              <th scope="row">Look</th>
+              <td>White and cream pages, maroon accents, a deep maroon map band. Lucida Grande and Source Sans headings.</td>
+              <td>Black hero, warm grey pages, a different colour for each of the Five Pillars. Monospaced figures.</td>
+              <td>Warm white and cream, rounded tiles, Kufic-square Pillar symbols. Manrope headings.</td>
+              <td>Photography and night-black chapters with cream and sand type. Wide Archivo headings.</td>
+            </tr>
+            <tr>
+              <th scope="row">Navigation</th>
+              <td>Sticky menu with Explore and Knowledge mega menus. Search dialog with ⌘K.</td>
+              <td>One sticky bar with Discover and Knowledge menus. Search is the main way around, with a ⌘K command palette.</td>
+              <td>Sticky menu with descriptive mega menus for each section. Inner pages add local menus.</td>
+              <td>Transparent menu over photos that turns solid on scroll. Full-screen menu on smaller screens.</td>
+            </tr>
+            <tr>
+              <th scope="row">Signed-in layout</th>
+              <td>Sidebar, with a “Today” home for Fellows and bottom tabs on phones</td>
+              <td>Collapsible sidebar with grouped sections and a command bar</td>
+              <td>Horizontal section bar, with tabs for related pages</td>
+              <td>Horizontal section bar, with tabs for related pages, as in Concept 3 but in Concept 4’s own type and colours</td>
+            </tr>
+            <tr>
+              <th scope="row">Joining experience<span class="th-note">All four collect the same information and create the same Member account</span></th>
+              <td>Three stages: start from ORCID, a CV or from scratch, with a live profile preview and strength score</td>
+              <td>Import from ORCID or a CV, then place yourself on the Pillars × Focus Areas map next to related Fellows</td>
+              <td>Step by step: “Who is joining” first (nobody is turned away), then account and profile, ending with “Check your answers”</td>
+              <td>Eight short stages with a live preview of your profile. About eight minutes, and you can save and continue later</td>
+            </tr>
+            <tr>
+              <th scope="row">How it presents shared features</th>
+              <td>An editorial homepage. Separate News, Podcast and Library sections under a Knowledge menu. An Explore matrix of Pillars and Focus Areas.</td>
+              <td>A network graph and world map in the directory. Discover faceted search, a Taxonomy matrix and a Collaborate marketplace of open roles.</td>
+              <td>Audience gateways on the homepage. About pages with local menus. A tabbed Opportunities hub for calls, funding and projects.</td>
+              <td>A photo stage with four headline options and a stories reel. A Network page as the directory. A tabbed Opportunities hub.</td>
+            </tr>
+            <tr>
+              <th scope="row">Motion</th>
+              <td>Portrait and quote change every 6 seconds, with a pause button</td>
+              <td>None on a timer. The graph responds to filters and clicks.</td>
+              <td>Minimal: menus, tabs and a testimonial switcher</td>
+              <td>The most: photo crossfades, a scroll-driven Pillars chapter and a sideways stories reel</td>
+            </tr>
+            <tr>
+              <th scope="row">Prototype scope</th>
+              <td>All <span class="mono">123</span> shared addresses, plus an activity groups page for Fellows</td>
+              <td>All <span class="mono">123</span> shared addresses, plus a taxonomy coverage page for the Secretariat</td>
+              <td>All <span class="mono">123</span> shared addresses</td>
+              <td>All <span class="mono">123</span> shared addresses</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Joining always means an account, a confirmed email, agreeing to the Code of Conduct, a separate consent to data processing, and at least one area of expertise and one Pillar or Focus Area. Nobody becomes a Fellow this way: newly elected Fellows get an invitation and their own onboarding.</p>
+    </div>
+  </section>
+
+  <!-- Concept 1 -->
+  <section class="concept" id="concept-1" aria-labelledby="c1-title">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="num">Concept 1</p>
+          <h2 id="c1-title">Contemporary Academic</h2>
+          <p class="thesis">AGS as a respected scholarly publication. Named Fellows and their ideas lead, with a dependable working platform behind them.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="design-1/contemporary-academic/en">Open in English</a>
+          <a class="btn ghost" href="design-1/contemporary-academic/ar" lang="ar">افتح بالعربية</a>
+        </div>
+      </div>
+      <div class="shots">
+        <div>
+          <div class="desk"><img src="assets/design-1-hero.webp" alt="Concept 1 homepage on desktop: a headline about accomplished Arab scholars, a Fellow search box and the portrait and quote of a featured Fellow." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-1-full.webp" data-title="Concept 1, Contemporary Academic: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+        </div>
+        <div class="phone"><img src="assets/design-1-mobile.webp" alt="Concept 1 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+      </div>
+      <div class="details">
+        <div>
+          <h3>Homepage, top to bottom</h3>
+          <ol>
+            <li>Fellow search and featured Fellow</li>
+            <li>AGS at a glance in four figures</li>
+            <li>Five Pillars index with previews</li>
+            <li>Focus Areas in photos</li>
+            <li>Fellows and their quotes</li>
+            <li>World map band in deep maroon</li>
+            <li>Research in progress, seeking expertise</li>
+            <li>Open calls and upcoming events</li>
+            <li>Stories, podcast and publications</li>
+            <li>Partners</li>
+            <li>Join as a Member, how Fellowship works, or partner with AGS</li>
+          </ol>
+        </div>
+        <div>
+          <h3>What sets it apart</h3>
+          <ul>
+            <li>An editorial homepage led by a rotating Fellow portrait and quote, which you can pause</li>
+            <li>Research, Programmes, News, Podcast and Library as separate sections, each with its own pages</li>
+            <li>A ⌘K search dialog across the site, with a shareable results page, and an Explore matrix of Pillars and Focus Areas</li>
+            <li>Joining as a profile builder: start from ORCID, a CV or from scratch, with a live preview and strength score</li>
+            <li>Signed-in areas in a sidebar, with a “Today” home for Fellows and bottom tabs on phones</li>
+          </ul>
+        </div>
+        <div class="verdict">
+          <h3>Strengths</h3>
+          <p>Credible and calm. Real scholars are the first thing you see, and the separate sections give publishing the deepest structure. The profile builder makes joining feel like starting a scholarly record.</p>
+          <h3>Watch out for</h3>
+          <p>The most conventional of the four. It needs strong portraits and a steady flow of editorial content to feel alive, and more top-level sections means more to keep filled.</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="type">
+          <span class="aa" aria-hidden="true">Aa</span>
+          <span class="aa-ar" lang="ar" aria-hidden="true">أب</span>
+          <dl><dt>Headings</dt><dd>Lucida Grande, Source Sans 3</dd><dt>Text</dt><dd>Dubai</dd><dt>Arabic</dt><dd>Noto Kufi Arabic</dd></dl>
+        </div>
+        <ul class="swatches" aria-label="Colour palette">
+          <li><i style="background:#661414"></i><b>Maroon</b><span>#661414</span></li>
+          <li><i style="background:#3f0c0e"></i><b>Deep maroon</b><span>#3F0C0E</span></li>
+          <li><i style="background:#1c1c1c"></i><b>Ink</b><span>#1C1C1C</span></li>
+          <li><i style="background:#fbf3e3"></i><b>Cream</b><span>#FBF3E3</span></li>
+          <li><i style="background:#f5f2ee"></i><b>Stone</b><span>#F5F2EE</span></li>
+          <li><i style="background:#ffffff"></i><b>White</b><span>#FFFFFF</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept 2 -->
+  <section class="concept" id="concept-2" aria-labelledby="c2-title">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="num">Concept 2</p>
+          <h2 id="c2-title">Research-Focused</h2>
+          <p class="thesis">AGS as a search engine for Arab expertise. Search is the front door, and the network of Fellows, projects and topics is something you can explore.</p>
+          <div class="pillars" aria-label="Five Pillar colours">
+            <span style="background:#ec8f86">1</span><span style="background:#eab354">2</span><span style="background:#86b6ea">3</span><span style="background:#eb98c3">4</span><span style="background:#62c7a3">5</span>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="design-2/research-focused/en">Open in English</a>
+          <a class="btn ghost" href="design-2/research-focused/ar" lang="ar">افتح بالعربية</a>
+        </div>
+      </div>
+      <div class="shots">
+        <div>
+          <div class="desk"><img src="assets/design-2-hero.webp" alt="Concept 2 homepage on desktop: a dark hero with a search box, popular searches and key figures beside a network graph of Fellows, projects and the Five Pillars." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-2-full.webp" data-title="Concept 2, Research-Focused: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+        </div>
+        <div class="phone"><img src="assets/design-2-mobile.webp" alt="Concept 2 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+      </div>
+      <div class="details">
+        <div>
+          <h3>Homepage, top to bottom</h3>
+          <ol>
+            <li>Search, key figures and the live network graph</li>
+            <li>Pillars × Focus Areas matrix</li>
+            <li>Roles open on live projects</li>
+            <li>Expertise index and Fellows open to collaboration</li>
+            <li>Open calls and the calendar</li>
+            <li>New work: stories, publications, podcast</li>
+            <li>Join as a Member, how Fellowship works, find expertise; partner logos</li>
+          </ol>
+        </div>
+        <div>
+          <h3>What sets it apart</h3>
+          <ul>
+            <li>A network graph you can filter by Pillar, and a world map in the directory. Each Fellow’s profile shows their own connections.</li>
+            <li>Discover: one faceted search across people, expertise, projects, calls and knowledge, plus an A–Z expertise index</li>
+            <li>A Taxonomy heat map of Pillars × Focus Areas, showing where AGS is strong or thin</li>
+            <li>Collaborate: a marketplace of open roles on live projects</li>
+            <li>Joining imports your record, then you place yourself on the Pillars × Focus map next to related Fellows</li>
+          </ul>
+        </div>
+        <div class="verdict">
+          <h3>Strengths</h3>
+          <p>The fastest route for researchers and partners who need expertise. It makes the network itself visible, and its workspace, with a collapsible sidebar and command bar, suits heavy daily use.</p>
+          <h3>Watch out for</h3>
+          <p>Less welcoming for media, government and first-time visitors. The graph and heat map are only as convincing as the real data behind them.</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="type">
+          <span class="aa" aria-hidden="true">Aa</span>
+          <span class="aa mono" aria-hidden="true" style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:clamp(2.5rem,2rem + 2vw,3.75rem)">1,400</span>
+          <dl><dt>Headings and text</dt><dd>Dubai, Source Sans 3</dd><dt>Figures</dt><dd>IBM Plex Mono</dd><dt>Arabic</dt><dd>Noto Kufi Arabic</dd></dl>
+        </div>
+        <ul class="swatches" aria-label="Colour palette">
+          <li><i style="background:#121212"></i><b>Night</b><span>#121212</span></li>
+          <li><i style="background:#661414"></i><b>Maroon</b><span>#661414</span></li>
+          <li><i style="background:#f6f5f2"></i><b>Paper</b><span>#F6F5F2</span></li>
+          <li><i style="background:linear-gradient(90deg,#9c2b2b 0 20%,#b0760c 20% 40%,#2a6fb5 40% 60%,#c0508a 60% 80%,#1f7a5c 80%)"></i><b>Five Pillars</b><span>5 colours</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept 3 -->
+  <section class="concept" id="concept-3" aria-labelledby="c3-title">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="num">Concept 3</p>
+          <h2 id="c3-title">Balanced Institutional</h2>
+          <p class="thesis">A clear front door for every kind of visitor. It asks who you are and points you to the right place, with deadlines, governance and trust up front.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="design-3/balanced-institutional/en">Open in English</a>
+          <a class="btn ghost" href="design-3/balanced-institutional/ar" lang="ar">افتح بالعربية</a>
+        </div>
+      </div>
+      <div class="shots">
+        <div>
+          <div class="desk"><img src="assets/design-3-hero.webp" alt="Concept 3 homepage on desktop: a headline, an “I am…” chooser for scholars, people seeking expertise, partners and students, and tiles for the Annual Gathering, registered members and the next deadline." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-3-full.webp" data-title="Concept 3, Balanced Institutional: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+        </div>
+        <div class="phone"><img src="assets/design-3-mobile.webp" alt="Concept 3 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+      </div>
+      <div class="details">
+        <div>
+          <h3>Homepage, top to bottom</h3>
+          <ol>
+            <li>“I am…” chooser and highlights</li>
+            <li>Find a Fellow</li>
+            <li>The Five Pillars explained</li>
+            <li>Focus Areas in photos</li>
+            <li>Where Fellows work: numbers and world map</li>
+            <li>Open calls and key dates timeline</li>
+            <li>Featured Fellows</li>
+            <li>Stories and upcoming events</li>
+            <li>Testimonials, how AGS is governed, partners</li>
+            <li>Join as a Member or partner with AGS</li>
+            <li>Monthly briefing sign-up</li>
+          </ol>
+        </div>
+        <div>
+          <h3>What sets it apart</h3>
+          <ul>
+            <li>Gateways for four audiences: scholars, people seeking expertise, partners and students</li>
+            <li>Upcoming deadlines and events in one timeline</li>
+            <li>The Board, Steering Committee and bylaws summarised on the homepage</li>
+            <li>Inner pages with local menus and Kufic-square Pillar symbols, and a tabbed Opportunities hub</li>
+            <li>The most guided joining: “Who is joining” first, then one step at a time, ending with “Check your answers” and a Member account straight away</li>
+          </ul>
+        </div>
+        <div class="verdict">
+          <h3>Strengths</h3>
+          <p>The easiest for non-specialists, partners, media and government. It is the clearest about deadlines and how AGS is governed, and its joining journey leaves the least room for confusion.</p>
+          <h3>Watch out for</h3>
+          <p>The least distinctive look. The homepage is static and gives little sense of a living network, and its many short joining steps may feel slow to experienced researchers.</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="type">
+          <span class="aa" aria-hidden="true">Aa</span>
+          <span class="aa-ar" lang="ar" aria-hidden="true">أب</span>
+          <dl><dt>Headings</dt><dd>Manrope</dd><dt>Text</dt><dd>Dubai</dd><dt>Arabic</dt><dd>Noto Kufi Arabic</dd></dl>
+        </div>
+        <ul class="swatches" aria-label="Colour palette">
+          <li><i style="background:#661414"></i><b>Maroon</b><span>#661414</span></li>
+          <li><i style="background:#1c1c1c"></i><b>Ink</b><span>#1C1C1C</span></li>
+          <li><i style="background:#fbf3e3"></i><b>Cream</b><span>#FBF3E3</span></li>
+          <li><i style="background:#fcfaf6"></i><b>Ground</b><span>#FCFAF6</span></li>
+          <li><i style="background:#f2f0eb"></i><b>Stone</b><span>#F2F0EB</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept 4 -->
+  <section class="concept" id="concept-4" aria-labelledby="c4-title">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <p class="num">Concept 4</p>
+          <h2 id="c4-title">Cinematic Digital Flagship</h2>
+          <p class="thesis">A flagship for a global intellectual network. Photography and large type tell the AGS story, while the working screens stay calm. Its homepage makes the most of the two ways to belong: as a Member or as a Fellow.</p>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="design-4/cinematic-digital-flagship/en">Open in English</a>
+          <a class="btn ghost" href="design-4/cinematic-digital-flagship/ar" lang="ar">افتح بالعربية</a>
+        </div>
+      </div>
+      <div class="shots">
+        <div>
+          <div class="desk"><img src="assets/design-4-hero.webp" alt="Concept 4 homepage on desktop: a full-screen photograph of a learner in a virtual-reality headset behind the headline “Arab scholars, one network.”, with a panel for switching between headline options." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-4-full.webp" data-title="Concept 4, Cinematic Digital Flagship: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+          <div class="heroes"><span>Headline options for review:</span>
+            <a href="design-4/cinematic-digital-flagship/en">1 Mission</a>
+            <a href="design-4/cinematic-digital-flagship/en?hero=2">2 Discover Fellows</a>
+            <a href="design-4/cinematic-digital-flagship/en?hero=3">3 Five Pillars</a>
+            <a href="design-4/cinematic-digital-flagship/en?hero=4">4 Minimal</a>
+          </div>
+        </div>
+        <div class="phone"><img src="assets/design-4-mobile.webp" alt="Concept 4 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+      </div>
+      <div class="details">
+        <div>
+          <h3>Homepage, top to bottom</h3>
+          <ol>
+            <li>Full-screen photo stage and headline</li>
+            <li>The network on a world map</li>
+            <li>Fellow stories, scrolled sideways</li>
+            <li>The Five Pillars as a scroll story</li>
+            <li>Focus Areas in photos</li>
+            <li>Now open: calls, places, projects and events</li>
+            <li>Listen and read</li>
+            <li>Two ways to belong: Member or Fellow</li>
+            <li>Partners</li>
+          </ol>
+        </div>
+        <div>
+          <h3>What sets it apart</h3>
+          <ul>
+            <li>Four headline options for leadership to compare, switchable on the page or by link</li>
+            <li>A seven-photo stage, a sideways stories reel, and a Pillars chapter whose image changes as you scroll</li>
+            <li>A Network page as the directory, where a seal marks Founding and Elected Fellows</li>
+            <li>Joining as eight short stages with a live preview of your profile, ORCID and CV import, and save-and-continue</li>
+            <li>A transparent menu over photographs, and a full-screen menu on smaller screens</li>
+          </ul>
+        </div>
+        <div class="verdict">
+          <h3>Strengths</h3>
+          <p>The strongest brand and recruitment impact. Its “Two ways to belong” chapter explains the difference between Members and Fellows more vividly than any other concept.</p>
+          <h3>Watch out for</h3>
+          <p>Depends on high-quality photography and has the most motion. The cinematic style must be kept up across new pages and content, which asks more of the team running the site.</p>
+        </div>
+      </div>
+      <div class="specimen">
+        <div class="type">
+          <span class="aa" aria-hidden="true">Aa</span>
+          <span class="aa-ar" lang="ar" aria-hidden="true">أب</span>
+          <dl><dt>Headings</dt><dd>Archivo, 112% wide</dd><dt>Text</dt><dd>Dubai</dd><dt>Arabic</dt><dd>Noto Kufi Arabic</dd></dl>
+        </div>
+        <ul class="swatches" aria-label="Colour palette">
+          <li><i style="background:#1c1c1c"></i><b>Night</b><span>#1C1C1C</span></li>
+          <li><i style="background:#242121"></i><b>Raised</b><span>#242121</span></li>
+          <li><i style="background:#fbf3e3"></i><b>Cream</b><span>#FBF3E3</span></li>
+          <li><i style="background:#e3c28f"></i><b>Sand</b><span>#E3C28F</span></li>
+          <li><i style="background:#661414"></i><b>Maroon</b><span>#661414</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <p>These are design prototypes for Arab Global Scholars, a Qatar Foundation initiative powered by HBKU. People, messages, applications and figures are fictional samples.</p>
+      <p>Sign-in is simulated. Anything you save, apply for or vote on stays in your browser.</p>
+    </div>
+    <div>
+      <p>Updated 10 October 2026</p>
+    </div>
+  </div>
+</footer>
+
+<dialog id="viewer" aria-labelledby="viewer-title">
+  <div class="dlg-head">
+    <h2 id="viewer-title">Full homepage</h2>
+    <button class="btn" type="button" data-close>Close</button>
+  </div>
+  <div class="dlg-body" tabindex="0"><img alt="" id="viewer-img"></div>
+</dialog>
+
+<script>
+(function(){
+  var dlg=document.getElementById('viewer'),img=document.getElementById('viewer-img'),title=document.getElementById('viewer-title'),body=dlg.querySelector('.dlg-body');
+  document.querySelectorAll('[data-full]').forEach(function(b){
+    b.addEventListener('click',function(){
+      title.textContent=b.dataset.title;
+      img.alt=b.dataset.title;
+      img.src=b.dataset.full;
+      body.scrollTop=0;
+      dlg.showModal();
+    });
+  });
+  dlg.querySelector('[data-close]').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+function l(c,r,a){const d=t=>{const o=String(t??"");return/[",\n]/.test(o)?`"${o.replace(/"/g,'""')}"`:o},s=[r,...a].map(t=>t.map(d).join(",")).join(`\r
+`),n=URL.createObjectURL(new Blob(["\uFEFF",s],{type:"text/csv;charset=utf-8"})),e=document.createElement("a");e.href=n,e.download=c,document.body.appendChild(e),e.click(),e.remove(),window.setTimeout(()=>URL.revokeObjectURL(n),1e3)}export{l as d};
