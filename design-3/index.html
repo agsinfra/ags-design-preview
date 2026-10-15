@@ -14,6 +14,15 @@
       gtag('js', new Date());
       // The app configures GA after restoring the deep link and setting its page title.
     </script>
+    <!-- Microsoft Clarity: shared project; automatically tracks SPA navigation. -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "yxzvnr5hy7");
+      window.clarity('set', 'concept', 'claude/design-3');
+    </script>
     <script>const route = new URLSearchParams(location.search).get('__route'); if (route && route.startsWith("/ags-design-preview/design-3/")) history.replaceState(null, '', route);</script>
     <script type="module" crossorigin src="/ags-design-preview/design-3/assets/index-BDghsMXm.js"></script>
     <link rel="stylesheet" crossorigin href="/ags-design-preview/design-3/assets/index-DmIKf_nm.css">
