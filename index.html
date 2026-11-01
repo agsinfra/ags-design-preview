@@ -182,6 +182,17 @@ tr.choose td{color:var(--ink);font-weight:500}
 #concept-4 .btn.ghost{border-radius:999px}
 #concept-4 .shots .phone{border-color:#3b3735}
 
+/* Review */
+.review{padding-block:0 clamp(56px,7vw,96px)}
+.review-card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--maroon);border-radius:12px;padding:clamp(24px,3.5vw,44px)}
+.review h2{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.125rem);line-height:1.15;letter-spacing:-.02em;margin:0}
+.review .sub{color:var(--muted);margin:12px 0 0;max-width:46ch}
+.review ol{list-style:none;counter-reset:r;margin:0;padding:0;border-top:1px solid var(--ink)}
+.review ol li{counter-increment:r;display:grid;grid-template-columns:2rem 1fr;padding:14px 0;border-bottom:1px solid var(--rule);font-size:.9375rem;line-height:1.55}
+.review ol li::before{content:counter(r);color:var(--maroon);font-weight:700;font-variant-numeric:tabular-nums}
+.review ol strong{display:block;font-weight:600;font-size:1rem}
+.review ol span{color:var(--muted)}
+
 /* Footer */
 .site-foot{padding-block:56px 72px;font-size:.9375rem;color:var(--muted)}
 .site-foot .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px}
@@ -199,7 +210,7 @@ dialog[open]{display:flex;flex-direction:column}
 
 @media (max-width:1000px){
   .doors{grid-template-columns:repeat(2,1fr)}
-  .same,.differ-top{grid-template-columns:1fr}
+  .same,.differ-top,.review-card{grid-template-columns:1fr}
   .details{grid-template-columns:1fr 1fr}
   .details .verdict{grid-column:1/-1}
   .specimen{grid-template-columns:1fr}
@@ -234,6 +245,7 @@ dialog[open]{display:flex;flex-direction:column}
       <span>Website concepts</span>
     </a>
     <nav aria-label="Sections">
+      <a href="#review">Review</a>
       <a href="#compare">Compare</a>
       <a href="#concept-1">Concept 1</a>
       <a href="#concept-2">Concept 2</a>
@@ -274,6 +286,20 @@ dialog[open]{display:flex;flex-direction:column}
         <div class="langs"><a href="design-4/cinematic-digital-flagship/en">English</a><a href="design-4/cinematic-digital-flagship/ar" lang="ar">العربية</a><a href="#concept-4">Details</a></div>
       </li>
     </ul>
+  </section>
+
+  <section class="review wrap" id="review" aria-labelledby="review-title">
+    <div class="review-card">
+      <div>
+        <h2 id="review-title">Reviewing the concepts</h2>
+        <p class="sub">Leave notes on any part of any page, in English or Arabic. Everyone on the review sees each other's notes and can reply.</p>
+      </div>
+      <ol>
+        <li><div><strong>Open any concept and press <em>Review</em></strong><span>The button sits at the bottom of every page.</span></div></li>
+        <li><div><strong>Choose your name</strong><span>Pick it from the list, or add it if it's missing. Review mode then stays on in all four concepts in this browser.</span></div></li>
+        <li><div><strong>Add notes</strong><span>Choose <em>Add note</em>, click a section, then pick a verdict: Keep as is, Keep with changes, Don't want or Question.</span></div></li>
+      </ol>
+    </div>
   </section>
 
   <section class="section" aria-labelledby="same-title">
@@ -723,10 +749,11 @@ dialog[open]{display:flex;flex-direction:column}
   <div class="wrap">
     <div>
       <p>These are design prototypes for Arab Global Scholars, a Qatar Foundation initiative powered by HBKU. People, messages, applications and figures are fictional samples.</p>
-      <p>Sign-in is simulated. Anything you save, apply for or vote on stays in your browser.</p>
+      <p>Sign-in is simulated. Anything you save, apply for or vote on stays in your browser. Review notes are the exception: they are saved for everyone on the review to see.</p>
     </div>
     <div>
       <p>Updated 10 October 2026</p>
+      <p><a href="review/">Decision board</a></p>
     </div>
   </div>
 </footer>
