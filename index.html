@@ -42,7 +42,7 @@
   --gutter:clamp(20px,4vw,48px);
 }
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{margin:0;background:var(--ground);color:var(--ink);font:400 1.0625rem/1.6 var(--frame);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
@@ -54,10 +54,10 @@ a{color:inherit}
 
 /* Header */
 .site-head{position:sticky;top:0;z-index:10;background:rgba(242,242,239,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--rule)}
-.site-head .wrap{display:flex;align-items:center;gap:24px;min-height:64px}
+.site-head .wrap{display:flex;align-items:center;gap:24px;min-height:84px;padding-block:8px}
 .brand{display:flex;align-items:center;gap:16px;text-decoration:none}
-.brand img{width:132px}
-.brand span{font-weight:600;font-size:.9375rem;padding-left:16px;border-left:1px solid var(--rule)}
+.brand img{width:auto;height:60px}
+.brand span{font-weight:600;font-size:.9375rem;padding-left:16px;border-left:1px solid var(--rule);line-height:60px}
 .site-head nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
 .site-head nav a{font-size:.875rem;font-weight:500;text-decoration:none;padding:6px 10px;border-radius:6px;color:var(--muted)}
 .site-head nav a:hover{color:var(--ink);background:rgba(0,0,0,.05)}
@@ -241,7 +241,7 @@ dialog[open]{display:flex;flex-direction:column}
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="./" aria-label="Arab Global Scholars website concepts, home">
-      <img src="assets/ags-horizontal.svg" alt="Arab Global Scholars" width="132" height="29">
+      <img src="assets/ags-vertical.svg" alt="Arab Global Scholars" width="45" height="60">
       <span>Website concepts</span>
     </a>
     <nav aria-label="Sections">
@@ -262,25 +262,25 @@ dialog[open]{display:flex;flex-direction:column}
 
     <ul class="doors">
       <li class="door">
-        <a class="shot" href="design-1/contemporary-academic/en" tabindex="-1" aria-hidden="true"><img src="assets/design-1-hero.webp" alt="" width="1440" height="900"></a>
+        <a class="shot" href="design-1/contemporary-academic/en" tabindex="-1" aria-hidden="true"><img src="assets/design-1-hero.webp?v=20261119" alt="" width="1440" height="900"></a>
         <h2><a href="design-1/contemporary-academic/en"><b>1</b>Contemporary Academic</a></h2>
         <p>A scholarly publication. Named Fellows and their ideas come first.</p>
         <div class="langs"><a href="design-1/contemporary-academic/en">English</a><a href="design-1/contemporary-academic/ar" lang="ar">العربية</a><a href="#concept-1">Details</a></div>
       </li>
       <li class="door">
-        <a class="shot" href="design-2/research-focused/en" tabindex="-1" aria-hidden="true"><img src="assets/design-2-hero.webp" alt="" width="1440" height="900"></a>
+        <a class="shot" href="design-2/research-focused/en" tabindex="-1" aria-hidden="true"><img src="assets/design-2-hero.webp?v=20261119" alt="" width="1440" height="900"></a>
         <h2><a href="design-2/research-focused/en"><b>2</b>Research-Focused</a></h2>
         <p>A search engine for Arab expertise. The network is something you explore.</p>
         <div class="langs"><a href="design-2/research-focused/en">English</a><a href="design-2/research-focused/ar" lang="ar">العربية</a><a href="#concept-2">Details</a></div>
       </li>
       <li class="door">
-        <a class="shot" href="design-3/balanced-institutional/en" tabindex="-1" aria-hidden="true"><img src="assets/design-3-hero.webp" alt="" width="1440" height="900"></a>
+        <a class="shot" href="design-3/balanced-institutional/en" tabindex="-1" aria-hidden="true"><img src="assets/design-3-hero.webp?v=20261119" alt="" width="1440" height="900"></a>
         <h2><a href="design-3/balanced-institutional/en"><b>3</b>Balanced Institutional</a></h2>
         <p>A clear front door. It asks who you are and sends you to the right place.</p>
         <div class="langs"><a href="design-3/balanced-institutional/en">English</a><a href="design-3/balanced-institutional/ar" lang="ar">العربية</a><a href="#concept-3">Details</a></div>
       </li>
       <li class="door">
-        <a class="shot" href="design-4/cinematic-digital-flagship/en" tabindex="-1" aria-hidden="true"><img src="assets/design-4-hero.webp?v=restored-vr" alt="" width="1440" height="900"></a>
+        <a class="shot" href="design-4/cinematic-digital-flagship/en" tabindex="-1" aria-hidden="true"><img src="assets/design-4-hero.webp?v=20261119" alt="" width="1440" height="900"></a>
         <h2><a href="design-4/cinematic-digital-flagship/en"><b>4</b>Cinematic Digital Flagship</a></h2>
         <p>A flagship brand. Full-screen photography and large type tell the AGS story.</p>
         <div class="langs"><a href="design-4/cinematic-digital-flagship/en">English</a><a href="design-4/cinematic-digital-flagship/ar" lang="ar">العربية</a><a href="#concept-4">Details</a></div>
@@ -463,16 +463,16 @@ dialog[open]{display:flex;flex-direction:column}
           <p class="thesis">AGS as a respected scholarly publication. Named Fellows and their ideas lead, with a dependable working platform behind them.</p>
         </div>
         <div class="actions">
-          <a class="btn primary" href="design-1/contemporary-academic/en">Open in English</a>
-          <a class="btn ghost" href="design-1/contemporary-academic/ar" lang="ar">افتح بالعربية</a>
+          <a class="btn primary" href="design-1/contemporary-academic/en">English</a>
+          <a class="btn ghost" href="design-1/contemporary-academic/ar" lang="ar">العربية</a>
         </div>
       </div>
       <div class="shots">
         <div>
-          <div class="desk"><img src="assets/design-1-hero.webp" alt="Concept 1 homepage on desktop: a headline about accomplished Arab scholars, a Fellow search box and the portrait and quote of a featured Fellow." width="1440" height="900" loading="lazy"></div>
-          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-1-full.webp" data-title="Concept 1, Contemporary Academic: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+          <div class="desk"><img src="assets/design-1-hero.webp?v=20261119" alt="Concept 1 homepage on desktop: a headline about accomplished Arab scholars, a Fellow search box and the portrait and quote of a featured Fellow." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-1-full.webp?v=20261119" data-title="Concept 1, Contemporary Academic: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
         </div>
-        <div class="phone"><img src="assets/design-1-mobile.webp" alt="Concept 1 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+        <div class="phone"><img src="assets/design-1-mobile.webp?v=20261119" alt="Concept 1 homepage on a phone." width="780" height="1688" loading="lazy"></div>
       </div>
       <div class="details">
         <div>
@@ -539,16 +539,16 @@ dialog[open]{display:flex;flex-direction:column}
           </div>
         </div>
         <div class="actions">
-          <a class="btn primary" href="design-2/research-focused/en">Open in English</a>
-          <a class="btn ghost" href="design-2/research-focused/ar" lang="ar">افتح بالعربية</a>
+          <a class="btn primary" href="design-2/research-focused/en">English</a>
+          <a class="btn ghost" href="design-2/research-focused/ar" lang="ar">العربية</a>
         </div>
       </div>
       <div class="shots">
         <div>
-          <div class="desk"><img src="assets/design-2-hero.webp" alt="Concept 2 homepage on desktop: a dark hero with a search box, popular searches and key figures beside a network graph of Fellows, projects and the Five Pillars." width="1440" height="900" loading="lazy"></div>
-          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-2-full.webp" data-title="Concept 2, Research-Focused: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+          <div class="desk"><img src="assets/design-2-hero.webp?v=20261119" alt="Concept 2 homepage on desktop: a dark hero with a search box, popular searches and key figures beside a network graph of Fellows, projects and the Five Pillars." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-2-full.webp?v=20261119" data-title="Concept 2, Research-Focused: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
         </div>
-        <div class="phone"><img src="assets/design-2-mobile.webp" alt="Concept 2 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+        <div class="phone"><img src="assets/design-2-mobile.webp?v=20261119" alt="Concept 2 homepage on a phone." width="780" height="1688" loading="lazy"></div>
       </div>
       <div class="details">
         <div>
@@ -606,16 +606,16 @@ dialog[open]{display:flex;flex-direction:column}
           <p class="thesis">A clear front door for every kind of visitor. It asks who you are and points you to the right place, with deadlines, governance and trust up front.</p>
         </div>
         <div class="actions">
-          <a class="btn primary" href="design-3/balanced-institutional/en">Open in English</a>
-          <a class="btn ghost" href="design-3/balanced-institutional/ar" lang="ar">افتح بالعربية</a>
+          <a class="btn primary" href="design-3/balanced-institutional/en">English</a>
+          <a class="btn ghost" href="design-3/balanced-institutional/ar" lang="ar">العربية</a>
         </div>
       </div>
       <div class="shots">
         <div>
-          <div class="desk"><img src="assets/design-3-hero.webp" alt="Concept 3 homepage on desktop: a headline, an “I am…” chooser for scholars, people seeking expertise, partners and students, and tiles for the Annual Gathering, registered members and the next deadline." width="1440" height="900" loading="lazy"></div>
-          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-3-full.webp" data-title="Concept 3, Balanced Institutional: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+          <div class="desk"><img src="assets/design-3-hero.webp?v=20261119" alt="Concept 3 homepage on desktop: a headline, an “I am…” chooser for scholars, people seeking expertise, partners and students, and a tile for the 1,200+ affiliate members and a photo card for the Annual Meeting 2026." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-3-full.webp?v=20261119" data-title="Concept 3, Balanced Institutional: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
         </div>
-        <div class="phone"><img src="assets/design-3-mobile.webp" alt="Concept 3 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+        <div class="phone"><img src="assets/design-3-mobile.webp?v=20261119" alt="Concept 3 homepage on a phone." width="780" height="1688" loading="lazy"></div>
       </div>
       <div class="details">
         <div>
@@ -678,14 +678,14 @@ dialog[open]{display:flex;flex-direction:column}
           <p class="thesis">A flagship for a global intellectual network. Photography and large type tell the AGS story, while the working screens stay calm. Its homepage makes the most of the two ways to belong: as a Member or as a Fellow.</p>
         </div>
         <div class="actions">
-          <a class="btn primary" href="design-4/cinematic-digital-flagship/en">Open in English</a>
-          <a class="btn ghost" href="design-4/cinematic-digital-flagship/ar" lang="ar">افتح بالعربية</a>
+          <a class="btn primary" href="design-4/cinematic-digital-flagship/en">English</a>
+          <a class="btn ghost" href="design-4/cinematic-digital-flagship/ar" lang="ar">العربية</a>
         </div>
       </div>
       <div class="shots">
         <div>
-          <div class="desk"><img src="assets/design-4-hero.webp?v=restored-vr" alt="Concept 4 homepage on desktop: a full-screen photograph of a learner in a virtual-reality headset behind the headline “Arab scholars, one network.”, with a panel for switching between headline options." width="1440" height="900" loading="lazy"></div>
-          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-4-full.webp?v=restored-vr" data-title="Concept 4, Cinematic Digital Flagship: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
+          <div class="desk"><img src="assets/design-4-hero.webp?v=20261119" alt="Concept 4 homepage on desktop: a full-screen photograph of two Arab women scholars smiling behind the headline “Arab minds. Global impact.”, with a panel for switching between headline options." width="1440" height="900" loading="lazy"></div>
+          <div class="shot-meta"><button class="linkish" type="button" data-full="assets/design-4-full.webp?v=20261119" data-title="Concept 4, Cinematic Digital Flagship: full homepage">See the full homepage</button><span>Desktop and mobile, English</span></div>
           <div class="heroes"><span>Headline options for review:</span>
             <a href="design-4/cinematic-digital-flagship/en">1 Mission</a>
             <a href="design-4/cinematic-digital-flagship/en?hero=2">2 Discover Fellows</a>
@@ -693,7 +693,7 @@ dialog[open]{display:flex;flex-direction:column}
             <a href="design-4/cinematic-digital-flagship/en?hero=4">4 Minimal</a>
           </div>
         </div>
-        <div class="phone"><img src="assets/design-4-mobile.webp?v=restored-vr" alt="Concept 4 homepage on a phone." width="780" height="1688" loading="lazy"></div>
+        <div class="phone"><img src="assets/design-4-mobile.webp?v=20261119" alt="Concept 4 homepage on a phone." width="780" height="1688" loading="lazy"></div>
       </div>
       <div class="details">
         <div>
