@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>SOW coverage · AGS design review</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Noto+Kufi+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#f2f2ef;--paper:#fff;--tint:#faf9f6;--ink:#1c1c1c;--muted:#5c5955;--rule:#d6d4cf;--soft-rule:#e8e6e1;--maroon:#661414;
+  --sow:#2f3bd6;--sow-bg:#e6e8fb;--bylaws:#7a5410;--bylaws-bg:#f6ead2;--nice:#4a4f5a;--nice-bg:#e7e8eb;
+  --shown:#2f6b3a;--shown-bg:#e1f0e3;--partial:#8a5a00;--partial-bg:#fbecc9;--build:#4a4a4a;--build-bg:#e7e7e7;--gap:#9b1c1c;--gap-bg:#f7dede;
+  --frame:"Hanken Grotesk",system-ui,sans-serif;--arabic:"Noto Kufi Arabic",sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+  --wrap:1200px;--gutter:clamp(16px,3vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:140px}
+body{margin:0;background:var(--ground);color:var(--ink);font:400 .9375rem/1.5 var(--frame);-webkit-font-smoothing:antialiased}
+[lang="ar"] body,[lang="ar"]{font-family:var(--arabic)}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid #2a6fb5;outline-offset:2px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+.mono{font-family:var(--mono);font-size:.8125em;letter-spacing:0}
+[lang="ar"] .mono{font-family:var(--arabic)}
+
+.head{background:var(--paper);border-bottom:1px solid var(--rule)}
+.head .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;min-height:64px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand img{width:118px}
+.brand span{font-weight:600;padding-inline-start:14px;border-inline-start:1px solid var(--rule)}
+.head .tools{margin-inline-start:auto;display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);font-weight:600;font-size:.875rem;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:var(--ink)}
+
+.intro{padding-block:28px 4px}
+.intro h1{font-size:clamp(1.75rem,1.2rem + 1.6vw,2.5rem);line-height:1.1;letter-spacing:-.02em;margin:0}
+[lang="ar"] .intro h1{letter-spacing:0}
+.intro p{color:var(--muted);margin:8px 0 0;max-width:78ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:20px}
+.stat{background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:14px 16px}
+.stat h2{font-size:.8125rem;font-weight:600;color:var(--muted);margin:0 0 8px}
+.stat ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:.875rem}
+.stat li{display:flex;align-items:center;gap:8px}
+.stat b{font-variant-numeric:tabular-nums;min-width:2.2ch;text-align:end}
+
+.bar{position:sticky;top:0;z-index:5;background:rgba(242,242,239,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-top:20px}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:end;gap:10px 16px;padding-block:12px}
+.tabs{display:flex;gap:3px;padding:3px;border-radius:10px;background:#e4e2dd}
+.tabs button{border:0;background:none;min-height:34px;padding:0 14px;border-radius:7px;font-weight:600;font-size:.875rem;cursor:pointer;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:end;margin-inline-start:auto}
+.filters label{display:grid;gap:3px;font-size:.75rem;font-weight:600;color:var(--muted)}
+.filters select,.filters input{min-height:36px;border:1px solid var(--rule);border-radius:8px;background:var(--paper);padding:0 10px;font-size:.875rem;font-weight:400;color:var(--ink)}
+.filters input{width:min(240px,70vw)}
+
+main{padding-block:16px 80px}
+.area{margin-top:24px}
+.area>h2{font-size:1.125rem;margin:0 0 10px}
+.empty{color:var(--muted);padding:24px 0}
+
+.pill{display:inline-flex;align-items:center;min-height:22px;padding:0 9px;border-radius:999px;font-size:.75rem;font-weight:600;white-space:nowrap}
+.pill.sow{background:var(--sow-bg);color:var(--sow)}
+.pill.bylaws{background:var(--bylaws-bg);color:var(--bylaws)}
+.pill.nice{background:var(--nice-bg);color:var(--nice)}
+.pill.plain{border:1px solid var(--rule);color:var(--muted);font-weight:500}
+.pill.shown,.pill.everywhere{background:var(--shown-bg);color:var(--shown)}
+.pill.partial{background:var(--partial-bg);color:var(--partial)}
+.pill.build{background:var(--build-bg);color:var(--build)}
+.pill.gap{background:var(--gap-bg);color:var(--gap)}
+
+.page{background:var(--paper);border:1px solid var(--rule);border-radius:12px;margin-bottom:10px;padding:14px 16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 20px}
+.page:target,.page.hit{border-color:var(--maroon);box-shadow:0 0 0 2px rgba(102,20,20,.18)}
+.page h3{margin:0;font-size:1.0625rem;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.page h3 .mono{color:var(--muted);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.why{margin:8px 0 0;max-width:80ch}
+.note{margin:6px 0 0;font-size:.875rem;color:var(--muted)}
+.note b{color:var(--ink);font-weight:600}
+.refs{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:2px;font-size:.875rem}
+.refs li{display:flex;gap:10px;align-items:baseline}
+.refs .mono{min-width:9ch;font-weight:500}
+.refs .sow-ref{color:var(--sow)}
+.refs .bylaws-ref{color:var(--bylaws)}
+.refs span:last-child{color:var(--muted)}
+.items{margin:10px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.items li{font-size:.8125rem;background:var(--tint);border:1px solid var(--soft-rule);border-radius:6px;padding:2px 8px}
+.items li.partial{border-color:#ecd9a4;background:#fffaf0}
+.concepts{display:flex;gap:6px;align-self:start}
+.badge{display:inline-grid;place-items:center;flex:none;width:30px;height:30px;border-radius:7px;font:600 .875rem/1 var(--frame);border:1px solid rgba(0,0,0,.18);text-decoration:none}
+a.badge:hover{outline:2px solid var(--ink);outline-offset:1px}
+.badge.A{background:#fff;color:#661414}
+.badge.B{background:#121212;color:#f6f5f2}
+.badge.C{background:#fbf3e3;color:#661414}
+.badge.D{background:#1c1c1c;color:#e3c28f;border-color:#e3c28f}
+.badge.off{background:transparent;color:#b6b3ad;border-style:dashed;border-color:#c9c6c0}
+
+.section{background:var(--paper);border:1px solid var(--rule);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.section:target{border-color:var(--maroon)}
+.section-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:12px 16px;border-bottom:1px solid var(--soft-rule);background:var(--tint)}
+.section-head h3{margin:0;font-size:1.0625rem}
+.section-head .count{margin-inline-start:auto;color:var(--muted);font-size:.8125rem}
+table{width:100%;border-collapse:collapse;font-size:.875rem}
+th,td{text-align:start;vertical-align:top;padding:9px 16px;border-top:1px solid var(--soft-rule)}
+thead th{border-top:0;font-size:.75rem;color:var(--muted);font-weight:600}
+td.state{width:1%;white-space:nowrap}
+td .why-note{display:block;color:var(--muted);font-size:.8125rem;margin-top:2px}
+.links{display:flex;flex-wrap:wrap;gap:4px 10px}
+.links a{color:var(--maroon);text-decoration-thickness:1px;text-underline-offset:2px}
+.muted{color:var(--muted)}
+
+.site-foot{padding-block:40px 64px;font-size:.875rem;color:var(--muted)}
+.site-foot p{margin:0 0 8px;max-width:78ch}
+
+@media (max-width:720px){
+  .page{grid-template-columns:minmax(0,1fr)}
+  .concepts{order:-1}
+  .filters{margin-inline-start:0;width:100%}
+  .filters label{flex:1}
+  .filters input{width:100%}
+  th:nth-child(3),td:nth-child(3){display:none}
+  .tabs{width:100%;overflow-x:auto}
+}
+@media print{.bar,.head .tools{display:none}.page,.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="head">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/ags-horizontal.svg" alt="Arab Global Scholars"><span id="brand-label">Design review</span></a>
+    <div class="tools"><button class="btn" type="button" id="lang"></button></div>
+  </div>
+</header>
+<div id="app"></div>
+<script type="module" src="page.js"></script>
+</body>
+</html>
